@@ -1,7 +1,8 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const startBtn = document.querySelector('.btn__reset');
-const overlay = document.getElementById('overlay')
+const overlay = document.getElementById('overlay');
+
 let missed = 0;
 
 const phrases = [
@@ -14,7 +15,7 @@ const phrases = [
 
 
 startBtn.addEventListener('click', () => {
-    overlay.style.display = 0;
+    overlay.style.display = none;
 })
 
 function getRandomPhraseAsArray(arr) {
@@ -22,20 +23,22 @@ function getRandomPhraseAsArray(arr) {
     let randomNumber = [Math.floor(Math.random() * phrases.length)];
     let randomPhrase = arr[randomNumber];
 
-    return randomPhrase.split();
+    return randomPhrase.split('');
 }
 
 function addPhraseToDisplay (arr){
+    const ul = phrase.querySelector("ul");
 
     for (let i = 0; i < arr.length; i++) {
         let listItem = document.createElement('li');
         listItem.innerHTML = arr[i];
-        document.getElementById("phrase, ul").appendChild(listItem);
-      }
+        ul.appendChild(listItem);
+      
       
     if (arr[i] === ' ') {
         listItem.className = 'space';
     } else {
         listItem.className = 'letter';
+    }
     }
 }
