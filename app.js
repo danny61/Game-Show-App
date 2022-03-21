@@ -15,7 +15,7 @@ const phrases = [
 
 
 startBtn.addEventListener('click', () => {
-    overlay.style.display = none;
+    overlay.style.display = 'none';
 })
 
 function getRandomPhraseAsArray(arr) {
@@ -27,20 +27,18 @@ function getRandomPhraseAsArray(arr) {
 }
 
 function addPhraseToDisplay (arr){
-    const ul = phrase.querySelector("ul");
+    const ul = document.querySelector('ul');
 
     for (let i = 0; i < arr.length; i++) {
 
-        let listItem = document.createElement('li');
-
-        listItem.innerHTML = arr[i];
-
-        ul.appendChild(listItem);
+    let listItem = document.createElement('li');
+    listItem.innerHTML = arr[i];
+    ul.appendChild(listItem);
       
     if (arr[i] === ' ') {
         listItem.className = 'space';
     } else {
         listItem.className = 'letter';
     }
-    }
+}
 }
