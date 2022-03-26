@@ -44,6 +44,8 @@ function addPhraseToDisplay (arr){
 }
 }
 
+addPhraseToDisplay(getRandomPhraseAsArray(phrases))
+
 function checkLetter (button) {
     const checkLetter = document.querySelectorAll('li');
     let match = null;
